@@ -1,0 +1,10 @@
+<div class="card">
+  <h2>{{ product.name }}</h2>
+  <p class="price">Цена: {{ product.price }} ₽</p>
+
+  @if (product.description) {
+    <p>{{ product.description }}</p>
+  }
+
+  <small>{{ getProductInfo() }}</small>
+</div>

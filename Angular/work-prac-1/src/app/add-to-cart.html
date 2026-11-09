@@ -1,0 +1,8 @@
+<section>
+  <h2>Добавить товар</h2>
+  <div class="add-row">
+    <input #nameInput type="text" placeholder="Название товара" (keyup.enter)="add(nameInput, priceInput)" />
+    <input #priceInput type="number" min="0" placeholder="Цена" (keyup.enter)="add(nameInput, priceInput)" />
+    <button type="button" (click)="add(nameInput, priceInput)">Добавить</button>
+  </div>
+</section>

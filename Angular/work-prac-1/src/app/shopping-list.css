@@ -1,0 +1,32 @@
+.shopping-list {
+  max-width: 400px;
+  margin: 20px 0;
+}
+
+.add-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.add-row input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px;
+}
+
+.shopping-item {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.empty-msg {
+  color: #888;
+  font-style: italic;
+}

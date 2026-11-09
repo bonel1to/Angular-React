@@ -1,0 +1,19 @@
+<section class="shopping-list">
+  <h2>Список покупок</h2>
+
+  <div class="add-row">
+    <input #itemInput type="text" placeholder="Название покупки" (keyup.enter)="addItem(itemInput)" />
+    <button type="button" (click)="addItem(itemInput)">Добавить</button>
+  </div>
+
+  @for (item of items; track item.id) {
+    <label class="shopping-item">
+      <input type="checkbox" [checked]="item.done" (change)="toggleItem(item.id, $event)" />
+      <span [class.done]="item.done">{{ item.name }}</span>
+    </label>
+  } @empty {
+    <p class="empty-msg">Список покупок пуст</p>
+  }
+
+  <p>Выполнено {{ completedCount }} из {{ items.length }}</p>
+</section>

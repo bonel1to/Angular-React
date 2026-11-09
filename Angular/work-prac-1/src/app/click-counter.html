@@ -1,0 +1,12 @@
+<section class="counter">
+  <h2>Счётчик кликов</h2>
+  <p>Текущее значение: {{ count }}</p>
+  <button type="button" (click)="increment()">+1</button>
+  <button type="button" (click)="decrement()">−1</button>
+
+  @if (count > 5) {
+    <p>Вы кликнули много раз!</p>
+  } @else if (count < 0) {
+    <p>Счётчик ушёл в минус</p>
+  }
+</section>

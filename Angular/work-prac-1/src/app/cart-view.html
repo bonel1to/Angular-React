@@ -1,0 +1,14 @@
+<section>
+  <h2>Корзина</h2>
+  @for (item of cart.getItems(); track item.id) {
+    <div class="cart-item">
+      <span>{{ item.name }} × {{ item.quantity }}</span>
+      <span>{{ item.price * item.quantity }} ₽</span>
+      <button type="button" (click)="cart.removeItem(item.id)">Удалить</button>
+    </div>
+  } @empty {
+    <p>Корзина пуста</p>
+  }
+  <p><strong>Итого: {{ cart.getTotal() }} ₽</strong></p>
+  <button type="button" (click)="cart.clear()">Очистить корзину</button>
+</section>
