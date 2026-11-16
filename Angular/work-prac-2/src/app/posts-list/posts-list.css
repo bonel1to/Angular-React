@@ -1,0 +1,38 @@
+.posts-container {
+  max-width: 800px;
+}
+
+.post-card {
+  margin-bottom: 16px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.post-card h3 {
+  margin-top: 0;
+  text-transform: capitalize;
+}
+
+.post-card small {
+  color: #666;
+}
+
+.post-card button {
+  display: block;
+  margin-top: 12px;
+  padding: 6px 10px;
+  border: 0;
+  border-radius: 4px;
+  background: #b91c1c;
+  color: white;
+  cursor: pointer;
+}
+
+.loading {
+  color: #666;
+}
+
+.error {
+  color: #b91c1c;
+}

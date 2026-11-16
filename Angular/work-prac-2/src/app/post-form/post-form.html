@@ -1,0 +1,58 @@
+<section class="form-container">
+  <h2>Создать пост</h2>
+
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Заголовок</label>
+      <input
+        id="title"
+        type="text"
+        formControlName="title"
+        placeholder="Введите заголовок (мин. 3 символа)"
+      />
+
+      @if (title?.invalid && title?.touched) {
+        <div class="error">
+          @if (title?.errors?.['required']) {
+            <small>Заголовок обязателен</small>
+          }
+          @if (title?.errors?.['minlength']) {
+            <small>Минимум 3 символа</small>
+          }
+        </div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="body">Текст поста</label>
+      <textarea
+        id="body"
+        formControlName="body"
+        rows="4"
+        placeholder="Введите текст (мин. 10 символов)"
+      ></textarea>
+
+      @if (body?.invalid && body?.touched) {
+        <div class="error">
+          @if (body?.errors?.['required']) {
+            <small>Текст обязателен</small>
+          }
+          @if (body?.errors?.['minlength']) {
+            <small>Минимум 10 символов</small>
+          }
+        </div>
+      }
+    </div>
+
+    <button type="submit" [disabled]="postForm.invalid">Отправить</button>
+    @if (successMessage) {
+      <p class="success">{{ successMessage }}</p>
+    }
+    @if (errorMessage) {
+      <p class="error">{{ errorMessage }}</p>
+    }
+    <p class="debug">
+      Статус формы: <strong>{{ postForm.valid ? 'Валидна' : 'Невалидна' }}</strong>
+    </p>
+  </form>
+</section>

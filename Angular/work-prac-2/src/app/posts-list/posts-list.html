@@ -1,0 +1,24 @@
+<section class="posts-container">
+  <h2>Список постов</h2>
+
+  @if (isLoading) {
+    <p class="loading">Загрузка...</p>
+  }
+
+  @if (errorMessage) {
+    <p class="error">{{ errorMessage }}</p>
+  }
+
+  @for (post of posts; track post.id) {
+    <article class="post-card">
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.body }}</p>
+      <small>ID: {{ post.id }}</small>
+      <button type="button" (click)="deletePost(post.id)">Удалить</button>
+    </article>
+  } @empty {
+    @if (!isLoading && !errorMessage) {
+      <p>Постов пока нет.</p>
+    }
+  }
+</section>
